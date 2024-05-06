@@ -100,3 +100,6 @@ python ./code/demo.py \
     --face_location 0.5 \
     --face_scale 0.2
 ```
+
+
+Regarding face location and face scale, please be aware that only minor adjustments can be made. Broad adjustments may impact other facial movements, such as the movements of the lips. This limitation is primarily because during data processing, we ensured that the face is centered and scaled to a certain proportion as much as possible, as detailed in the [facial cropping code](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#facial-part-cropping). Thus, the network lacks the capability for extensive adjustments in terms of angle. If you need significant changes in these attributes, reconsidering the processing of training data (for example, allowing a wider range of movement and adjusting camera distance) might address this issue.
