@@ -27,7 +27,7 @@ Please download the checkpoint and place them into the folder ```ckpts```
 
 Keep pose_yaw, pose_pitch, pose_roll to zero.
 
-![monalisa_facing_forward](assets/monalisa_facing_forward.gif
+![monalisa_facing_forward](assets/monalisa_facing_forward.gif)
 
 ```
 python ./code/demo_audio_generation.py \
