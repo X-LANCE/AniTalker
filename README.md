@@ -49,6 +49,8 @@ python ./code/demo_audio_generation.py \
 
 Chaning pose_yaw from `0` to `0.25`
 
+![monalisa_turn_head_right](assets/monalisa_turn_head_right.gif)
+
 ```
 python ./code/demo_audio_generation.py \
     --infer_type 'mfcc_pose_only' \
@@ -66,6 +68,9 @@ python ./code/demo_audio_generation.py \
 
 
 ### Talking in Free-style
+
+![monalisa_free_style](assets/monalisa_free_style.gif)
+
 
 ```
 python ./code/demo_audio_generation.py \
