@@ -1,9 +1,11 @@
 
 # AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
-[Demo](https://x-lance.github.io/AniTalker/) 
 
-[Paper]() [Uploading]
+<p align="center">
+  <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="#">Paper (Uploading)</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
+</p>
+
 
 ![](docs/img/generated_result.png)
 
@@ -106,4 +108,6 @@ python ./code/demo_audio_generation.py \
 
 ## Ackonwlegements
 
-Stage 1, which mainly involves training motion encoder and the rendering module, extensively utilizes resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is based on [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and employ [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Furthermore, we utilize the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain). Additionally, we've made the dataset preprocessing codes (such as pose and landmark extraction) available at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing). We sincerely appreciate the contributions of numerous prior works that have paved the way for the development of AniTalker. 
+We sincerely appreciate the contributions of numerous prior works that have paved the way for the development of AniTalker. 
+
+Stage 1, which mainly involves training motion encoder and the rendering module, extensively utilizes resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is based on [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and employ [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Furthermore, we utilize the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain). Additionally, we've made the dataset preprocessing codes (such as pose and landmark extraction) available at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing). 
