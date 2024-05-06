@@ -1,0 +1,18 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css";
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 860px;
+    }
+}
+
+.authors>span {
+    padding: 0 0.5rem;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+    a.button.is-rounded.is-link.is-light:not(:last-child) {
+        margin-bottom: 0.75em;
+    }
+}
