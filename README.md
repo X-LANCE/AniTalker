@@ -8,6 +8,7 @@
 
 ![](docs/img/generated_result.png)
 
+Note: This is *NOT* a official product.
 
 ## Environment Installation
 
@@ -107,6 +108,12 @@ python ./code/demo.py \
 <summary> 2. Utilizing algorithms to automatically extract or control using other faces' angles</summary> If you need to automate face control, you can use some pose extraction algorithms to do so, such as extracting the pose of another person to drive this portrait. The algorithms for extraction have been open sourced at <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#face-orientation-angles">this link</a> </details>
 
 <details><summary> 3. What are the differences between MFCC and Hubert features?</summary>Both `MFCC` and `Hubert` are front-end features for speech, used to extract audio signals. Since `Hubert` features require more environmental dependencies and occupy a lot of disk space, we have replaced this feature with a lightweight feature (MFCC) for everyone to use for quick inference. The rest of the code remains the same. We've observed that MFCC converges more easily but is slightly inferior in performance to Hubert. If you need to extract Hubert features, please refer to <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction">this link</a> </details>
+
+## Disclaimer
+
+Please do not spread any false information, and it is suggested that you use it for educational demonstration purposes.
+
+This library's code is not a formal product, and we have not tested all use cases, therefore it cannot be directly offered to end service customers. The main purpose of making our code public is to facilitate academic demonstrations and communication. Please comply with the relevant regulations of the license before using the code, as incorrect usage may produce harmful content. Especially when you deploy the code, please follow local laws and bear the corresponding consequences. Our company (AISpeech Ltd.) will not bear any responsibility.
 
 
 ## Citation
