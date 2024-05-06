@@ -1,7 +1,6 @@
 
 # AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
-
 <p align="center">
   <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="#">Paper (Uploading)</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
 </p>
@@ -58,7 +57,7 @@ Chaning pose_yaw from `0` to `0.25`
 Demo script:
 
 ```
-python ./code/demo_audio_generation.py \
+python ./code/demo.py \
     --infer_type 'mfcc_pose_only' \
     --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
     --stage2_checkpoint_path 'ckpts/stage2_pose_only.ckpt' \
@@ -80,13 +79,24 @@ python ./code/demo_audio_generation.py \
 Demo script:
 
 ```
-python ./code/demo_audio_generation.py \
+python ./code/demo.py \
     --infer_type 'mfcc_pose_only' \
     --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
     --stage2_checkpoint_path 'ckpts/stage2_pose_only.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
     --result_path 'results/monalisa_free_style/'
+```
+
+
+```
+python ./code/demo.py \
+    --infer_type 'mfcc_full_control' \
+    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
+    --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
+    --test_image_path 'test_demos/portraits/monalisa.jpg' \
+    --test_audio_path 'test_demos/audios/english_female.wav' \
+    --result_path 'results/monalisa_free_style_full_control/'
 ```
 
 
@@ -110,4 +120,4 @@ python ./code/demo_audio_generation.py \
 
 We sincerely appreciate the contributions of numerous prior works that have paved the way for the development of AniTalker. 
 
-Stage 1, which mainly involves training motion encoder and the rendering module, extensively utilizes resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is based on [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and employ [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Furthermore, we utilize the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain). Additionally, we've made the dataset preprocessing codes (such as pose and landmark extraction) available at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing). 
+Stage 1, which mainly involves training motion encoder and the rendering module, extensively utilizes resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is based on [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and employ [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Furthermore, we utilize the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain). Additionally, we utilize [3DDFA_V2](https://github.com/cleardusk/3DDFA_V2) to extract head pose and [torchlm](https://github.com/DefTruth/torchlm) to get face landmarks and we have already open source the code usage at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing).
