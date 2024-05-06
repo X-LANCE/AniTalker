@@ -1,7 +1,7 @@
 
 # AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
-[Demo]() 
+[Demo](https://x-lance.github.io/AniTalker/) 
 
 [Paper]() [Uploading]
 
