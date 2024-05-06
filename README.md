@@ -89,16 +89,9 @@ python ./code/demo.py \
     --result_path 'results/monalisa_free_style/'
 ```
 
+### More Scripts
 
-```
-python ./code/demo.py \
-    --infer_type 'mfcc_full_control' \
-    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
-    --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
-    --test_image_path 'test_demos/portraits/monalisa.jpg' \
-    --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_full_control/'
-```
+See [MORE_SCRIPTS](MORE_SCRIPTS.md)
 
 
 ## Some Advice and Questions
