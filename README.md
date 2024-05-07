@@ -2,13 +2,13 @@
 # AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
 <p align="center">
-  <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="#">Paper (Uploading)</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
+  <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="https://arxiv.org/abs/2311.01811">Paper</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
 </p>
 
 
 ![](docs/img/generated_result.png)
 
-Note: This is *NOT* a official product.
+* The weights and code are being organized, and we will make them public as soon as possible.
 
 ## Environment Installation
 
@@ -40,7 +40,7 @@ python ./code/demo_audio_generation.py \
     --stage2_checkpoint_path 'ckpts/stage2_pose_only.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_frontal_face/' \
+    --result_path 'results/monalisa_case1/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0 \
@@ -51,7 +51,7 @@ python ./code/demo_audio_generation.py \
 
 ### Adjust the orentation 
 
-Chaning pose_yaw from `0` to `0.25`
+Changing pose_yaw from `0` to `0.25`
 
 ![monalisa_turn_head_right](assets/monalisa_turn_head_right.gif)
 
@@ -64,7 +64,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_pose_only.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_turn_head_right/' \
+    --result_path 'results/monalisa_case2/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.25 \
@@ -86,7 +86,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_pose_only.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style/'
+    --result_path 'results/monalisa_case3/'
 ```
 
 ### More Scripts
@@ -96,23 +96,41 @@ See [MORE_SCRIPTS](MORE_SCRIPTS.md)
 
 ## Some Advice and Questions
 
-<details><summary> 1. Using similar poses to the portrait</summary> Try to keep the generated face angle close to the original portrait angle to avoid potential deformation issues. For example, if the face starts by rotating to the left (viewed from the portrait face angle), it is better to use a value for yaw between -1 and 0 (-90 to 0 degrees) because when the difference in angle from the portrait is large, the face can appear distorted. </details><details>
+<details><summary>1. Using similar poses to the portrait (Best Practice)</summary>
+To avoid potential deformation issues, it is recommended to keep the generated face angle close to the original portrait angle. For instance, if the face in the portrait is initially rotated to the left, it is advisable to use a value for yaw between -1 and 0 (-90 to 0 degrees). When the difference in angle from the portrait is significant, the generated face may appear distorted.
+</details>
 
-<summary> 2. Utilizing algorithms to automatically extract or control using other faces' angles</summary> If you need to automate face control, you can use some pose extraction algorithms to do so, such as extracting the pose of another person to drive this portrait. The algorithms for extraction have been open sourced at <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#face-orientation-angles">this link</a> </details>
+<details><summary>2. Utilizing algorithms to automatically extract or control using other faces' angles</summary>
+If you need to automate face control, you can employ pose extraction algorithms to achieve this, such as extracting the pose of another person to drive the portrait. The algorithms for extraction have been open-sourced and can be found at <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#face-orientation-angles">this link</a>.
+</details>
 
-<details><summary> 3. What are the differences between MFCC and Hubert features?</summary>Both `MFCC` and `Hubert` are front-end features for speech, used to extract audio signals. Since `Hubert` features require more environmental dependencies and occupy a lot of disk space, we have replaced this feature with a lightweight feature (MFCC) for everyone to use for quick inference. The rest of the code remains the same. We've observed that MFCC converges more easily but is slightly inferior in performance to Hubert. If you need to extract Hubert features, please refer to <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction">this link</a> </details>
+<details><summary>3. What are the differences between MFCC and Hubert features?</summary>
+Both `MFCC` and `Hubert` are front-end features for speech, used to extract audio signals. However, `Hubert` features require more environmental dependencies and occupy a significant amount of disk space. To facilitate quick inference for everyone, we have replaced this feature with a lightweight alternative (MFCC). The rest of the code remains unchanged. We have observed that MFCC converges more easily but may be inferior in terms of expressiveness compared to Hubert. If you need to extract Hubert features, please refer to <a href="https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction">this link</a>. Considering the highly lifelike nature of the generated results, we currently do not plan to release the weights based on Hubert.
+</details>
+
 
 ## Disclaimer
 
-Please do not spread any false information, and it is suggested that you use it for educational demonstration purposes.
+1. This library's code is not a formal product, and we have not tested all use cases; therefore, it cannot be directly offered to end-service customers.
 
-This library's code is not a formal product, and we have not tested all use cases, therefore it cannot be directly offered to end service customers. The main purpose of making our code public is to facilitate academic demonstrations and communication. Please comply with the relevant regulations of the license before using the code, as incorrect usage may produce harmful content. Especially when you deploy the code, please follow local laws and bear the corresponding consequences. Our company (AISpeech Ltd.) will not bear any responsibility.
+2. The main purpose of making our code public is to facilitate academic demonstrations and communication. Any use of this code to spread harmful information is strictly prohibited.
 
+3. Please use this library in compliance with the terms specified in the license file and avoid improper use.
+
+4. When using the code, please follow and abide by local laws and regulations.
+
+5. During the use of this code, you will bear the corresponding responsibility. Our company (AISpeech Ltd.) is not responsible for the generated results.
 
 ## Citation
 
 ```
-@INPROCEEDINGS{
+@misc{liu2024anitalker,
+      title={AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding}, 
+      author={Tao Liu and Feilong Chen and Shuai Fan and Chenpeng Du and Qi Chen and Xie Chen and Kai Yu},
+      year={2024},
+      eprint={2405.03121},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 

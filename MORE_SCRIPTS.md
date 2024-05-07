@@ -11,7 +11,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_face_location_0.1_0.5_0.4/' \
+    --result_path 'results/monalisa_case4/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.1 \
@@ -31,7 +31,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_face_location_0.1_0.4_0.4/' \
+    --result_path 'results/monalisa_case5/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.1 \
@@ -50,7 +50,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_face_location_0.1_0.6_0.4/' \
+    --result_path 'results/monalisa_case6/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.1 \
@@ -70,7 +70,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_face_location_0.1_0.5_0.6/' \
+    --result_path 'results/monalisa_case7/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.1 \
@@ -91,7 +91,7 @@ python ./code/demo.py \
     --stage2_checkpoint_path 'ckpts/stage2_more_controllable.ckpt' \
     --test_image_path 'test_demos/portraits/monalisa.jpg' \
     --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_free_style_face_location_0.1_0.5_0.2/' \
+    --result_path 'results/monalisa_case8/' \
     --control_flag True \
     --seed 0 \
     --pose_yaw 0.1 \
@@ -102,4 +102,6 @@ python ./code/demo.py \
 ```
 
 
-Regarding face location and face scale, please be aware that only minor adjustments can be made. Broad adjustments may impact other facial movements, such as the movements of the lips. This limitation is primarily because during data processing, we ensured that the face is centered and scaled to a certain proportion as much as possible, as detailed in the [facial cropping code](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#facial-part-cropping). Thus, the network lacks the capability for extensive adjustments in terms of angle. If you need significant changes in these attributes, reconsidering the processing of training data (for example, allowing a wider range of movement and adjusting camera distance) might address this issue.
+Regarding face location and face scale, please be aware that only minor adjustments can be made. Broad adjustments may impact other facial movements, such as the movements of the lips. This limitation is primarily because during data processing, we ensured that the face is centered and scaled to a certain proportion as much as possible, as detailed in the [facial cropping code](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#facial-part-cropping). Consequently, the network has limited capability for extensive adjustments in terms of angle.
+
+If you require significant changes in these attributes, you may consider reprocessing the training data. For instance, you could allow a wider range of movement and adjust the camera distance to a larger extent. By doing so, the network will be exposed to more diverse data during training, enabling it to handle more substantial variations in face location and scale.
