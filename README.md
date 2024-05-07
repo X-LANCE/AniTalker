@@ -49,7 +49,7 @@ python ./code/demo_audio_generation.py \
 ```
 
 
-### Adjust the orentation 
+### Adjust the orientation 
 
 Changing pose_yaw from `0` to `0.25`
 
