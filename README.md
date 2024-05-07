@@ -109,18 +109,6 @@ Both `MFCC` and `Hubert` are front-end features for speech, used to extract audi
 </details>
 
 
-## Disclaimer
-
-1. This library's code is not a formal product, and we have not tested all use cases; therefore, it cannot be directly offered to end-service customers.
-
-2. The main purpose of making our code public is to facilitate academic demonstrations and communication. Any use of this code to spread harmful information is strictly prohibited.
-
-3. Please use this library in compliance with the terms specified in the license file and avoid improper use.
-
-4. When using the code, please follow and abide by local laws and regulations.
-
-5. During the use of this code, you will bear the corresponding responsibility. Our company (AISpeech Ltd.) is not responsible for the generated results.
-
 ## Citation
 
 ```
@@ -134,8 +122,23 @@ Both `MFCC` and `Hubert` are front-end features for speech, used to extract audi
 }
 ```
 
-## Ackonwlegements
+## Acknowledgments
 
-We sincerely appreciate the contributions of numerous prior works that have paved the way for the development of AniTalker. 
+We would like to express our sincere gratitude to the numerous prior works that have laid the foundation for the development of AniTalker.
 
-Stage 1, which mainly involves training motion encoder and the rendering module, extensively utilizes resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is based on [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and employ [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Furthermore, we utilize the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain). Additionally, we utilize [3DDFA_V2](https://github.com/cleardusk/3DDFA_V2) to extract head pose and [torchlm](https://github.com/DefTruth/torchlm) to get face landmarks and we have already open source the code usage at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing).
+Stage 1, which primarily focuses on training the motion encoder and the rendering module, heavily relies on resources from [LIA](https://github.com/wyhsirius/LIA). The second stage of diffusion training is built upon [diffae](https://github.com/phizaz/diffae) and [espnet](https://espnet.github.io/espnet/_modules/espnet2/asr/encoder/conformer_encoder.html). For the computation of mutual information loss, we implement methods from [CLUB](https://github.com/Linear95/CLUB) and utilize [AAM-softmax](https://github.com/TaoRuijie/ECAPA-TDNN) in the training of face recognition. Moreover, we leverage the pretrained Hubert model provided by [TencentGameMate](https://github.com/TencentGameMate/chinese_speech_pretrain).
+
+Additionally, we employ [3DDFA_V2](https://github.com/cleardusk/3DDFA_V2) to extract head pose and [torchlm](https://github.com/DefTruth/torchlm) to obtain face landmarks, which are used to calculate face location and scale. We have already open-sourced the code usage for these preprocessing steps at [talking_face_preprocessing](https://github.com/liutaocode/talking_face_preprocessing). We acknowledge the importance of building upon existing knowledge and are committed to contributing back to the research community by sharing our findings and code.
+
+
+## Disclaimer
+
+1. This library's code is not a formal product, and we have not tested all use cases; therefore, it cannot be directly offered to end-service customers.
+
+2. The main purpose of making our code public is to facilitate academic demonstrations and communication. Any use of this code to spread harmful information is strictly prohibited.
+
+3. Please use this library in compliance with the terms specified in the license file and avoid improper use.
+
+4. When using the code, please follow and abide by local laws and regulations.
+
+5. During the use of this code, you will bear the corresponding responsibility. Our company (AISpeech Ltd.) is not responsible for the generated results.
