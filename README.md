@@ -9,6 +9,7 @@
 ![](docs/img/generated_result.png)
 
 * The weights and code are being organized, and we will make them public as soon as possible.
+* Thank you for your attention. The papaer is currently under peer review, and there may still be minor changes. We will update this repository after the official publication.
 
 ## Environment Installation
 
