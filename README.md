@@ -21,6 +21,8 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 pip install -r requirements.txt
 ```
 
+[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) Thanks to [nitinmukesh](https://github.com/nitinmukesh)
+
 ## Model Zoo
 
 Please download the checkpoint from [URL](https://huggingface.co/taocode/anitalker_ckpts/tree/main) and place them into the folder ```ckpts```
