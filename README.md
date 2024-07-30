@@ -25,6 +25,8 @@ pip install -r requirements.txt
 
 Please download the checkpoint from [URL](https://huggingface.co/taocode/anitalker_ckpts/tree/main) and place them into the folder ```ckpts```
 
+[中文用户] For Chinese users, we recommend you visit [here](https://pan.baidu.com/s/1gqTPmoJ3QwKbGkqgMXM3Jw?pwd=antk) to download.
+
 ```
 ckpts/
 ├── stage1.ckpt
