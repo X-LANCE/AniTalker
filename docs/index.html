@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AniTalker</title>
+    <link rel="shortcut icon" type="image/jpg" href="" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/49f46e7382.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container is-max-widescreen">
+            <h1 class="title is-2 has-text-centered">
+                <strong>AniTalker:</strong> Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
+            </h1>
+
+            <p class=" is-5 has-text-centered">
+                <a href="https://github.com/X-LANCE/AniTalker" class="has-text-centered">Codes</a> - <a href="https://arxiv.org/abs/2405.03121" class="has-text-centered">Paper</a> 
+            </p>
+            
+
+        </div>
+    <section>
+
+     <section class="section">
+        <div class="container is-max-desktop">
+
+            <div class="content has-text-justified-desktop">
+                <img class="mb-5" src="img/generated_result.png">
+            </div>
+            <p>
+                <i>" We introduce <b>AniTalker</b>, a framework that transforms a <b>single static portrait</b> and <b>input audio </b> into animated talking videos with naturally flowing movements. Each column of generated results utilizes identical control signals with similar poses and expressions but incorporates some random variations, demonstrating the diversity of our generated outcomes. " </i>
+            </p>
+        </div>
+    </section>
+
+        <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4 has-text-centered">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+                
+                <p>
+                    The paper introduces <strong>AniTalker</strong>, an innovative framework designed to generate lifelike talking faces from a single portrait. Unlike existing models that primarily focus on verbal cues such as lip synchronization and fail to capture the complex dynamics of facial expressions and nonverbal cues, AniTalker employs a universal motion representation. This innovative representation effectively captures a wide range of facial dynamics, including subtle expressions and head movements. AniTalker enhances motion depiction through two self-supervised learning strategies: the first involves reconstructing target video frames from source frames within the same identity to learn subtle motion representations, and the second develops an identity encoder using metric learning while actively minimizing mutual information between the identity and motion encoders. This approach ensures that the motion representation is dynamic and devoid of identity-specific details, significantly reducing the need for labeled data. Additionally, the integration of a diffusion model with a variance adapter allows for the generation of diverse and controllable facial animations. This method not only demonstrates AniTalker’s capability to create detailed and realistic facial movements but also underscores its potential in crafting dynamic avatars for real-world applications.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+         <section class="section">
+        <div class="container is-max-desktop">
+             <h1 class="title is-4 has-text-centered">
+                Architecture
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <img class="mb-5" src="img/method_overview.png">
+            </div>
+            <i>"Our framework comprises two main components: learning a universal motion representation and then generating and manipulating this representation through a sequence model. Specifically, the first part aims to learn a robust motion representation by employing metric learning (ML), mutual information disentanglement (MID), and Hierarchical Aggregation Layer (HAL). Subsequently, this motion representation can be used for further generation and manipulation. " </i>
+        </div>
+    </section>
+
+        
+        <div class="container">
+
+        <h1 class="title is-4 has-text-centered">
+            Video Demos
+        </h1>
+        <p class=" is-4 has-text-centered">
+                <b>[NOTE] The videos below are generated content, and the audio does not represent the speaker's opinion.</b> 
+            </p>
+        <div class="row">
+            
+            <div class="col-12 text-center">
+
+                <hr style="margin-top:0px">
+                <p><center><strong><font size="5">Audio-driven Talking Face Generation (Realism)</font></strong></center></p>
+                <p></p>
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/1_audio_driven_1_realism.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/1_audio_driven_2_realism.mp4" type="video/mp4"> </video> </td>
+
+                    </tr>
+                    <tr>
+                        <td width="50%"> <span>   </span> </td>
+                        <td width="50%"> <span>   </span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+                <p><center><strong><font size="5">Audio-driven Talking Face Generation (Statue/Cartoon)</font></strong></center></p>
+                <p></p>
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/1_audio_driven_4_statue.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/1_audio_driven_3_cartoon.mp4" type="video/mp4"> </video> </td>
+
+                    </tr>
+                    <tr>
+                        <td width="50%"> <span>   </span> </td>
+                        <td width="50%"> <span>   </span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+                <p><center><strong><font size="5">Video-driven Talking Face Generation (Cross/Self Reenactment)</font></strong></center></p>
+                <p></p>
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/2_video_driven_same_identity.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/2_video_driven_cross_identity.mp4" type="video/mp4"> </video> </td>
+
+                    </tr>
+                    <tr>
+                        <td width="50%"> <span>   </span> </td>
+                        <td width="50%"> <span>   </span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <span><center><strong><font size="5"> Diversity </font></strong></center></span> </td>
+                        <td width="50%"> <span><center><strong><font size="5"> Controllability </font></strong></center></span> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/4_diversity_demo.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/5_controllability_demo.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+
+                <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <span><center><strong><font size="5"> Long Video Generation (Mars Story)  </font></strong></center></span> </td>
+                        <td width="50%"> <span><center><strong><font size="5"> Long Video Generation (Mona Lisa) </font></strong></center></span> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/6_long_video_generation-1.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/6_long_video_generation-2.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%"> <span><center><strong><font size="4"> Prompt: 
+                            "Tell a story about a wonderful journey 
+                            exploring Mars to a 5-year-old kid." </font></strong></center></span> </td>
+                        <td width="50%"> <span><center><strong><font size="4"> Prompt: 
+                            "If you were Mona Lisa and lived in the present, 
+                            tell us about your thoughts."</font></strong></center></span> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+
+
+                 <table style="table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td width="50%"> <span><center><strong><font size="5"> Method Comparsion (Audio-driven)  </font></strong></center></span> </td>
+                        <td width="50%"> <span><center><strong><font size="5"> Method Comparsion (Video-driven)</font></strong></center></span> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/7_method_comparsion_audio_driven.mp4" type="video/mp4"> </video> </td>
+                        <td width="50%"> <video width="95%" controls> <source src="videos/7_method_comparsion_video_driven.mp4" type="video/mp4"> </video> </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br>
+                <hr style="margin-top:0px">
+
+            </div>
+        </div>
+        </div>
+    <br>
+    </section>
+
+
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <div class="content has-text-justified-desktop">
+                <h1 class="title is-4">Ablation Studies</h1>
+                <video controls="" width="100%">
+                    <source src="videos/8_ablation_studies.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Ethical Consideration
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+
+                The potential misuse of lifelike digital human face generation, such as for creating fraudulent identities or disseminating misinformation, necessitates preemptive ethical measures. Before utilizing these models, it is crucial for organizations to integrate ethical guidelines into their policies, ensuring the application of this technology emphasizes consent, transparency, and accountability. Furthermore, it is recommended to embed visible or invisible digital watermarks in any generated content.
+
+                </p>
+
+            </div>
+
+            <h1 class="title is-4">
+                Removal Policy
+            </h1>
+            <div class="content has-text-justified-desktop">
+
+                 <p>
+
+               Please be aware that all videos on this page are algorithmically generated from publicly available sources and are intended solely for academic demonstrations and algorithm comparisons.  Any other form of usage is prohibited. If you feel uncomfortable or have any questions, please raise an <b> <a href="https://github.com/anitalker/anitalker.github.io/issues">issue </a> </b>, and we will address your request promptly. Besides, if required by the original image owner or in the case of misuse of the models, the images, models, and codes associated with this project may be removed at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</html>
