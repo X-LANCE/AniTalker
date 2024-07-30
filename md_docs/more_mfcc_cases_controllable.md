@@ -26,7 +26,7 @@ python ./code/demo.py \
     --face_scale 0.4
 ```
 
-- The generated video of this sample will be saved to [outputs/lianliru_mfcc/sad-lianliru.mp4](outputs/lianliru_mfcc/sad-lianliru.mp4).
+- The generated video of this sample will be saved to [outputs/lianliru_mfcc/sad-lianliru.mp4](../outputs/lianliru_mfcc/sad-lianliru.mp4).
 - 'lianliru.wav' is from [StoryTTS](https://github.com/X-LANCE/StoryTTS) dataset.
 
 ## Einstein
@@ -50,7 +50,7 @@ python ./code/demo.py \
 ```
 
 
-- The generated video of this sample will be saved to [outputs/Einstein_mfcc/Einstein-english_male.mp4](outputs/Einstein_mfcc/Einstein-english_male.mp4).
+- The generated video of this sample will be saved to [outputs/Einstein_mfcc/Einstein-english_male.mp4](../outputs/Einstein_mfcc/Einstein-english_male.mp4).
 - Image of `Einstein.png` is from [GAIA](https://gaiavatar.github.io/gaia/)
 - There is a bad case occurring in the middle of the generated video; this may be caused by the lack of robustness of MFCC.
 
@@ -74,7 +74,7 @@ python ./code/demo.py \
 
 
 ```
-- The generated video of this sample will be saved to [outputs/cartoon_girl_mars_story_mfcc/cartoon_girl-mars.mp4](outputs/cartoon_girl_mars_story_mfcc/cartoon_girl-mars.mp4).
+- The generated video of this sample will be saved to [outputs/cartoon_girl_mars_story_mfcc/cartoon_girl-mars.mp4](../outputs/cartoon_girl_mars_story_mfcc/cartoon_girl-mars.mp4).
 
 ## Statue
 
@@ -94,5 +94,5 @@ python ./code/demo.py \
     --pose_roll -0.0031
 
 ```
-- The generated video of this sample will be saved to [outputs/statue_mfcc/statue-statue.mp4](outputs/statue_mfcc/statue-statue.mp4).
+- The generated video of this sample will be saved to [outputs/statue_mfcc/statue-statue.mp4](../outputs/statue_mfcc/statue-statue.mp4).
 

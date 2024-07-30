@@ -27,7 +27,7 @@ python ./code/demo.py \
     --face_scale 0.5
 ```
 
-- The generated video of this sample will be saved to [outputs/monalisa_case4/monalisa-english_female.mp4](outputs/monalisa_case4/monalisa-english_female.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_case4/monalisa-english_female.mp4](../outputs/monalisa_case4/monalisa-english_female.mp4).
 
 ### Adjust head location to the left
 
@@ -48,7 +48,7 @@ python ./code/demo.py \
     --face_scale 0.5
 ```
 
-- The generated video of this sample will be saved to [outputs/monalisa_case5/monalisa-english_female.mp4](outputs/monalisa_case5/monalisa-english_female.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_case5/monalisa-english_female.mp4](../outputs/monalisa_case5/monalisa-english_female.mp4).
 
 
 ### Adjust head location to the right
@@ -70,7 +70,7 @@ python ./code/demo.py \
     --face_scale 0.5
 ```
 
-- The generated video of this sample will be saved to [outputs/monalisa_case6/monalisa-english_female.mp4](outputs/monalisa_case6/monalisa-english_female.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_case6/monalisa-english_female.mp4](../outputs/monalisa_case6/monalisa-english_female.mp4).
 
 
 ### Adjust head to larger scale
@@ -92,7 +92,7 @@ python ./code/demo.py \
     --face_scale 0.55
 ```
 
-- The generated video of this sample will be saved to [outputs/monalisa_case7/monalisa-english_female.mp4](outputs/monalisa_case7/monalisa-english_female.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_case7/monalisa-english_female.mp4](../outputs/monalisa_case7/monalisa-english_female.mp4).
 
 
 
@@ -115,7 +115,7 @@ python ./code/demo.py \
     --face_scale 0.40
 ```
 
-- The generated video of this sample will be saved to [outputs/monalisa_case8/monalisa-english_female.mp4](outputs/monalisa_case8/monalisa-english_female.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_case8/monalisa-english_female.mp4](../outputs/monalisa_case8/monalisa-english_female.mp4).
 
 
 **Explanation:**
