@@ -111,7 +111,10 @@ python ./code/demo.py \
 - For Pose Controllable Hubert Cases, see [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md)
 
 
-### Face Resoulution (Optional)
+### Face Super-resolution (Optional)
+
+The purpose is to upscale the resolution from 256 to 512 and address the issue of blurry rendering.
+
 
 Please install addtional environment here:
 
