@@ -107,7 +107,7 @@ python ./code/demo.py \
 
 [Upgrade for Early Users] Re-download the checkpoint with the Hubert model into the ckpts directory and additionally install `pip install transformers==4.19.2`. When the code does not detect the Hubert path, it will automatically extract it and provide extra instructions on how to resolve any errors encountered.
 
-<details><summary>Show Original MFCC scipts</summary>
+<details><summary>Still Show Original MFCC Scripts</summary>
 ```
 python ./code/demo.py \
     --infer_type 'mfcc_pose_only' \
