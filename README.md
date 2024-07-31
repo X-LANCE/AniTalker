@@ -103,8 +103,9 @@ python ./code/demo.py \
 
 ### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
 
-[Notes]: The Hubert model is our default model. For environment convenience, we provide an MFCC version, but we found that the utilization rate of the Hubert model is not high, and people still use MFCC more often. MFCC has poorer results. This goes against our original intention, so we have deprecated this model. We recommend you start testing with the hubert_audio_only model. Thanks.
+[Note] The Hubert model is our default model. For environment convenience, we provide an MFCC version, but we found that the utilization rate of the Hubert model is not high, and people still use MFCC more often. MFCC has poorer results. This goes against our original intention, so we have deprecated this model. We recommend you start testing with the hubert_audio_only model. Thanks.
 
+[Upgrade for Early Users] Re-download the checkpoint with the Hubert model into the ckpts directory and additionally install `pip install transformers==4.19.2`. When the code does not detect the Hubert path, it will automatically extract it and provide extra instructions on how to resolve any errors encountered.
 
 <details><summary>Show Details</summary>
 ```
