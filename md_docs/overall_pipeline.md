@@ -25,10 +25,6 @@ We recommend using [edge-tts](https://github.com/rany2/edge-tts) with the `en-US
 edge-tts --voice en-US-AriaNeural  --text  "In the mosaic of life, each moment weaves itself into a grand tapestry, one that captures not just our highest peaks but also our lowest valleys. This intricate interplay of experiences shapes our wisdom and resilience. As we journey through life, we realize that our true wealth lies not in material possessions but in the richness of our relationships and the depth of our reflections. Life, then, is less about what we accumulate and more about what we discover within ourselves and share with others." --write-media /path/to/your/audio/path/audio_name.wav --write-subtitles /path/to/your/audio/path/audio_name.vtt
 ```
 
-#### Extract Hubert
-- If you are using only the MFCC model, there is no need to extract Hubert features; simply input the original audio into the model.
-- To extract Hubert features for your own audio inference, please refer to [this documentation](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction) to obtain the Hubert feature. After extraction, set the feature path to `test_hubert_path`. We also provide pre-extracted features for the audios in `test_demos/audios` at [this URL](https://huggingface.co/datasets/taocode/anitalker_hubert_feature_samples/tree/main) for your testing.
-
 ### Run the inference 
 
 

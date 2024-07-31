@@ -94,11 +94,16 @@ python ./code/demo.py \
 
 [See More Hubert Cases](md_docs/more_hubert_cases_audio_only.md)
 
-- Before running the script above, download the Hubert feature of `monalisa.wav` from [here](https://huggingface.co/datasets/taocode/anitalker_hubert_feature_samples/blob/main/monalisa.npy) and place it into the folder: `test_demos/audios_hubert/`. The generated video of this sample will be saved to [outputs/monalisa_hubert/monalisa-monalisa.mp4](outputs/monalisa_hubert/monalisa-monalisa.mp4).
+- The generated video of this sample will be saved to [outputs/monalisa_hubert/monalisa-monalisa.mp4](outputs/monalisa_hubert/monalisa-monalisa.mp4).
 
-- To extract Hubert features for inference of your own audio, please refer to [this documentation](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction) to obtain the Hubert feature. After extraction, place the feature path to `test_hubert_path`. We also provide the pre-extracted features for the audios in `test_demos/audios` at [URL](https://huggingface.co/datasets/taocode/anitalker_hubert_feature_samples/tree/main) for your testing.
+- For Pose Controllable Hubert Cases, see [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md).
 
-- For Pose Controllable Hubert Cases, see [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md)
+- For Pose/Face Controllable Hubert Cases, see [more_hubert_cases_more_control](md_docs/more_hubert_cases_more_control.md).
+
+
+| Source Img | Results           | 
+|------------|--------------------------|
+|<img src="test_demos/portraits/monalisa.jpg" width="200" ></img> | <img src="assets/monalisa-monalisa.gif" width="200" ></img> | 
 
 
 ### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
@@ -141,11 +146,6 @@ pip install gfpgan
 ```
 
 Then enable the option `--face_sr` in your scripts. The first time will download the weights of gfpgan.
-
-
-### Control Case:
-
-Below are MFCC cases. You can refer to [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md) and [more_hubert_cases_more_control](md_docs/more_hubert_cases_more_control.md) for control results.
 
 
 ## Best Practice 
