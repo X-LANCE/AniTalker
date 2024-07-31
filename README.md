@@ -107,7 +107,7 @@ python ./code/demo.py \
 
 [Upgrade for Early Users] Re-download the checkpoint with the Hubert model into the ckpts directory and additionally install `pip install transformers==4.19.2`. When the code does not detect the Hubert path, it will automatically extract it and provide extra instructions on how to resolve any errors encountered.
 
-<details><summary>Show Details</summary>
+<details><summary>Show Original MFCC scipts</summary>
 ```
 python ./code/demo.py \
     --infer_type 'mfcc_pose_only' \
@@ -122,13 +122,7 @@ python ./code/demo.py \
     --pose_pitch 0 \
     --pose_roll 0 
 ```
-
 </details>
-
-- The generated video of this sample will be saved to [outputs/monalisa_mfcc/monalisa-monalisa.mp4](outputs/monalisa_mfcc/monalisa-monalisa.mp4)
-- See More MFCC Cases [more_mfcc_cases](md_docs/more_mfcc_cases.md)
-- All default storage paths are in the `outputs` directory
-
 
 ### Face Super-resolution (Optional)
 
