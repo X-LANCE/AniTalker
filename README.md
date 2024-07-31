@@ -65,13 +65,13 @@ ckpts/
 - `stage2_more_controllable_hubert.ckpt` is similar to `stage2_more_controllable_mfcc.ckpt`, but uses Hubert for audio features. 
 - `stage2_pose_only_mfcc.ckpt` inputs audio features as MFCC, and includes pose control signals (yaw, pitch, roll angles).  [The performance of the MFCC model is poor and not recommended for use.]
 - `stage2_more_controllable_mfcc.ckpt` inputs audio features as MFCC, and adds control signals for face location and face scale in addition to pose.
+- `chinese-hubert-large` are used for extracting audio features.
+
 
 **Quick Guide:**
 
-* If you want to quickly experience the entire algorithm process, please use the model with the MFCC suffix.
-* If you desire better performance and are willing to endure greater resource consumption and deployment complexity, please use the model with the Hubert suffix.
-* If you need more control, please use the model with the controllable suffix. Controllable models often have better expressiveness but requiring more parameter adjustment.
 * Considering usability and model performance, we recommend using `stage2_audio_only_hubert.ckpt`.
+* If you need more control, please use the model with the controllable suffix. Controllable models often have better expressiveness but requiring more parameter adjustment.
 * All stage2 models can also be generated solely by audio if the control flag is disabled.
 
 ## Run the demo
