@@ -108,15 +108,10 @@ def main(args):
     if not os.path.exists(args.test_audio_path):
         print(f'{args.test_audio_path} does not exist!')
         exit(0)
-
-    if conf.infer_type.startswith('hubert') and not os.path.exists(args.test_hubert_path):
-        print(f'{args.test_hubert_path} does not exist!')
-        exit(0)
     
     img_source = img_preprocessing(args.test_image_path, args.image_size).to(args.device)
     one_shot_lia_start, one_shot_lia_direction, feats = lia.get_start_direction_code(img_source, img_source, img_source, img_source)
-    # import pdb;pdb.set_trace()
-        
+
 
     #======Loading Stage 2 model=========
     model = LitModel(conf)
@@ -141,9 +136,48 @@ def main(args):
         audio_driven = torch.Tensor(audio_driven_obj[audio_start:audio_end,:]).unsqueeze(0).float().to(args.device)
         
     elif conf.infer_type.startswith('hubert'):
-        # MFCC hubert features
-        # Please extract features to test_hubert_path first.
-        audio_driven_obj = np.load(args.test_hubert_path)
+        # Hubert features
+        if not os.path.exists(args.test_hubert_path):
+            
+            if not check_package_installed('transformers'):
+                print('Please install transformers module first.')
+                exit(0)
+            hubert_model_path = 'ckpts/chinese-hubert-large'
+            if not os.path.exists(hubert_model_path):
+                print('Please download the hubert weight into the ckpts path first.')
+                exit(0)
+            print('You did not extract the audio features in advance, extracting online now, which will increase processing delay')
+
+            start_time = time.time()
+
+            # load hubert model
+            from transformers import Wav2Vec2FeatureExtractor, HubertModel
+            audio_model = HubertModel.from_pretrained(hubert_model_path).to(args.device)
+            feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained(hubert_model_path)
+            audio_model.feature_extractor._freeze_parameters()
+            audio_model.eval()
+
+            # hubert model forward pass
+            audio, sr = librosa.load(args.test_audio_path, sr=16000)
+            input_values = feature_extractor(audio, sampling_rate=16000, padding=True, do_normalize=True, return_tensors="pt").input_values
+            input_values = input_values.to(args.device)
+            ws_feats = []
+            with torch.no_grad():
+                outputs = audio_model(input_values, output_hidden_states=True)
+                for i in range(len(outputs.hidden_states)):
+                    ws_feats.append(outputs.hidden_states[i].detach().cpu().numpy())
+                ws_feat_obj = np.array(ws_feats)
+                ws_feat_obj = np.squeeze(ws_feat_obj, 1)
+                ws_feat_obj = np.pad(ws_feat_obj, ((0, 0), (0, 1), (0, 0)), 'edge') # align the audio length with video frame
+            
+            execution_time = time.time() - start_time
+            print(f"Extraction Audio Feature: {execution_time:.2f} Seconds")
+
+            audio_driven_obj = ws_feat_obj
+        else:
+            print(f'Using audio feature from path: {args.test_hubert_path}')
+            audio_driven_obj = np.load(args.test_hubert_path)
+
         frame_start, frame_end = 0, int(audio_driven_obj.shape[1]/2)
         audio_start, audio_end = int(frame_start * 2), int(frame_end * 2) # The video frame is fixed to 25 hz and the audio is fixed to 50 hz
         
@@ -153,7 +187,6 @@ def main(args):
     # Diffusion Noise
     noisyT = th.randn((1,frame_end, args.motion_dim)).to(args.device)
     
-
     #======Inputs for Attribute Control=========
     if os.path.exists(args.pose_driven_path):
         pose_obj = np.load(args.pose_driven_path)
@@ -192,7 +225,7 @@ def main(args):
     #=========================================
     
     execution_time = time.time() - start_time
-    print(f"Motion Diffusion Model: {execution_time} Seconds")
+    print(f"Motion Diffusion Model: {execution_time:.2f} Seconds")
 
     generated_directions = generated_directions.detach().cpu().numpy()
     
@@ -206,7 +239,7 @@ def main(args):
     #==============================================
     
     execution_time = time.time() - start_time
-    print(f"Renderer Model: {execution_time} Seconds")
+    print(f"Renderer Model: {execution_time:.2f} Seconds")
 
     frames_to_video(frames_result_saved_path, args.test_audio_path, predicted_video_256_path)
     

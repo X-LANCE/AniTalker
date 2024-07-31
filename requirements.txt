@@ -8,3 +8,4 @@ tqdm
 espnet==202301
 moviepy
 python_speech_features
+transformers==4.19.2

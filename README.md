@@ -12,6 +12,10 @@ An updated version of the paper will be uploaded later
 
 [Overall Pipeline](md_docs/overall_pipeline.md)
 
+## Updates
+
+- [2024.07.31] Added hubert feature extraction code and environment
+
 ## Environment Installation
 
 ```shell
@@ -31,6 +35,10 @@ Please download the checkpoint from [URL](https://huggingface.co/taocode/anitalk
 
 ```
 ckpts/
+├── chinese-hubert-large
+├──── config.json
+├──── preprocessor_config.json
+├──── pytorch_model.bin
 ├── stage1.ckpt
 ├── stage2_pose_only_mfcc.ckpt
 ├── stage2_full_control_mfcc.ckpt
@@ -44,19 +52,19 @@ ckpts/
 | Stage | Model Name | Audio-only Inference | Addtional Control Signal | 
 | --- | --- | --- | --- |
 | First stage | stage1.ckpt | - | Motion Encoder & Image Renderer | 
-| Second stage (MFCC) | stage2_pose_only_mfcc.ckpt | yes |  Head Pose | 
-| Second stage (MFCC) | stage2_full_control_mfcc.ckpt | yes | Head Pose/Location/Scale | 
 | Second stage (Hubert) | stage2_audio_only_hubert.ckpt | yes | - | 
 | Second stage (Hubert) | stage2_pose_only_hubert.ckpt | yes | Head Pose |
 | Second stage (Hubert) | stage2_full_control_hubert.ckpt | yes | Head Pose/Location/Scale | 
+| Second stage (MFCC) | stage2_pose_only_mfcc.ckpt | yes |  Head Pose | 
+| Second stage (MFCC) | stage2_full_control_mfcc.ckpt | yes | Head Pose/Location/Scale | 
 
 - `stage1.ckpt` is trained on a single image video dataset, aiming to learn the transfer of actions. After training, it utilizes the Motion Encoder (for extracting identity-independent motion) and Image Renderer.
 - The models starting with `stage2` are trained on a video dataset with audio, and unless otherwise specified, are trained from scratch.
-- `stage2_pose_only_mfcc.ckpt` inputs audio features as MFCC, and includes pose control signals (yaw, pitch, roll angles).
-- `stage2_more_controllable_mfcc.ckpt` inputs audio features as MFCC, and adds control signals for face location and face scale in addition to pose.
-- `stage2_audio_only_hubert.ckpt` inputs audio features as Hubert, without any control signals. Suitable for scenes with faces oriented forward, compared to controllable models, it requires less parameter adjustment to achieve satisfactory results.
+- `stage2_audio_only_hubert.ckpt` inputs audio features as Hubert, without any control signals. Suitable for scenes with faces oriented forward, compared to controllable models, it requires less parameter adjustment to achieve satisfactory results. [We recommend starting with this model]
 - `stage2_pose_only_hubert.ckpt` is similar to `stage2_pose_only_mfcc.ckpt`, the difference being that the audio features are Hubert. Compared to the audio_only model, it includes pose control signals.
 - `stage2_more_controllable_hubert.ckpt` is similar to `stage2_more_controllable_mfcc.ckpt`, but uses Hubert for audio features. 
+- `stage2_pose_only_mfcc.ckpt` inputs audio features as MFCC, and includes pose control signals (yaw, pitch, roll angles).  [The performance of the MFCC model is poor and not recommended for use.]
+- `stage2_more_controllable_mfcc.ckpt` inputs audio features as MFCC, and adds control signals for face location and face scale in addition to pose.
 
 **Quick Guide:**
 
@@ -70,28 +78,8 @@ ckpts/
 
 [Explanation of Parameters for demo.py](md_docs/config.md)
 
-### Main Inference Scripts (MFCC, Faster 🚀)
 
-```
-python ./code/demo.py \
-    --infer_type 'mfcc_pose_only' \
-    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
-    --stage2_checkpoint_path 'ckpts/stage2_pose_only_mfcc.ckpt' \
-    --test_image_path 'test_demos/portraits/monalisa.jpg' \
-    --test_audio_path 'test_demos/audios/monalisa.wav' \
-    --result_path 'outputs/monalisa_mfcc/' \
-    --control_flag \
-    --seed 0 \
-    --pose_yaw 0.25 \
-    --pose_pitch 0 \
-    --pose_roll 0 
-```
-
-- The generated video of this sample will be saved to [outputs/monalisa_mfcc/monalisa-monalisa.mp4](outputs/monalisa_mfcc/monalisa-monalisa.mp4)
-- See More MFCC Cases [more_mfcc_cases](md_docs/more_mfcc_cases.md)
-- All default storage paths are in the `outputs` directory
-
-### Main Inference Scripts (Hubert, Better Result 💪)
+### Main Inference Scripts (Hubert, Better Result 💪) - Recommended
 
 ```
 python ./code/demo.py \
@@ -111,6 +99,34 @@ python ./code/demo.py \
 - To extract Hubert features for inference of your own audio, please refer to [this documentation](https://github.com/liutaocode/talking_face_preprocessing?tab=readme-ov-file#audio-feature-extraction) to obtain the Hubert feature. After extraction, place the feature path to `test_hubert_path`. We also provide the pre-extracted features for the audios in `test_demos/audios` at [URL](https://huggingface.co/datasets/taocode/anitalker_hubert_feature_samples/tree/main) for your testing.
 
 - For Pose Controllable Hubert Cases, see [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md)
+
+
+### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
+
+[Notes]: The Hubert model is our default model. For environment convenience, we provide an MFCC version, but we found that the utilization rate of the Hubert model is not high, and people still use MFCC more often. MFCC has poorer results. This goes against our original intention, so we have deprecated this model. We recommend you start testing with the hubert_audio_only model. Thanks.
+
+
+<details><summary>Show Details</summary>
+```
+python ./code/demo.py \
+    --infer_type 'mfcc_pose_only' \
+    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
+    --stage2_checkpoint_path 'ckpts/stage2_pose_only_mfcc.ckpt' \
+    --test_image_path 'test_demos/portraits/monalisa.jpg' \
+    --test_audio_path 'test_demos/audios/monalisa.wav' \
+    --result_path 'outputs/monalisa_mfcc/' \
+    --control_flag \
+    --seed 0 \
+    --pose_yaw 0.25 \
+    --pose_pitch 0 \
+    --pose_roll 0 
+```
+
+</details>
+
+- The generated video of this sample will be saved to [outputs/monalisa_mfcc/monalisa-monalisa.mp4](outputs/monalisa_mfcc/monalisa-monalisa.mp4)
+- See More MFCC Cases [more_mfcc_cases](md_docs/more_mfcc_cases.md)
+- All default storage paths are in the `outputs` directory
 
 
 ### Face Super-resolution (Optional)
@@ -134,55 +150,7 @@ Then enable the option `--face_sr` in your scripts. The first time will download
 
 ### Control Case:
 
-Below are MFCC cases. You can refer to [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md) and [more_hubert_cases_more_control](md_docs/more_hubert_cases_more_control.md) for better results.
-
-#### Face facing forward
-
-Keep pose_yaw, pose_pitch, pose_roll to zero.
-
-![monalisa_facing_forward](assets/monalisa_facing_forward.gif)
-
-Demo script:
-
-```
-python ./code/demo.py \
-    --infer_type 'mfcc_pose_only' \
-    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
-    --stage2_checkpoint_path 'ckpts/stage2_pose_only_mfcc.ckpt' \
-    --test_image_path 'test_demos/portraits/monalisa.jpg' \
-    --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_case1/' \
-    --control_flag \
-    --seed 0 \
-    --pose_yaw 0 \
-    --pose_pitch 0 \
-    --pose_roll 0 
-```
-
-#### Control Case: Adjust the orientation 
-
-Changing `pose_yaw` from `0` to `0.25`
-
-![monalisa_turn_head_right](assets/monalisa_turn_head_right.gif)
-
-Demo script:
-
-```
-python ./code/demo.py \
-    --infer_type 'mfcc_pose_only' \
-    --stage1_checkpoint_path 'ckpts/stage1.ckpt' \
-    --stage2_checkpoint_path 'ckpts/stage2_pose_only_mfcc.ckpt' \
-    --test_image_path 'test_demos/portraits/monalisa.jpg' \
-    --test_audio_path 'test_demos/audios/english_female.wav' \
-    --result_path 'results/monalisa_case2/' \
-    --control_flag \
-    --seed 0 \
-    --pose_yaw 0.25 \
-    --pose_pitch 0 \
-    --pose_roll 0 
-```
-
-- See [more_mfcc_controlable_cases](md_docs/more_mfcc_controlable_cases.md)
+Below are MFCC cases. You can refer to [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md) and [more_hubert_cases_more_control](md_docs/more_hubert_cases_more_control.md) for control results.
 
 
 ## Best Practice 
