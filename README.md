@@ -1,5 +1,10 @@
 
-# AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
+<div align="center">
+<a href="https://trendshift.io/repositories/10102" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10102" alt="X-LANCE%2FAniTalker | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
+# AniTalker
+
+Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
 <p align="center">
   <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="https://arxiv.org/abs/2405.03121">Paper</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
@@ -11,6 +16,8 @@ An updated version of the paper will be uploaded later
 ![](docs/img/generated_result.png)
 
 [Overall Pipeline](md_docs/overall_pipeline.md)
+
+</div>
 
 ## Updates
 
