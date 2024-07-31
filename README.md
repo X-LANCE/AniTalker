@@ -94,6 +94,8 @@ python ./code/demo.py \
 
 [See More Hubert Cases](md_docs/more_hubert_cases_audio_only.md)
 
+- You only need to configure two items: `test_image_path` (the image you want to drive) and `test_audio_path` (the audio to drive the image). Other parameters like pose and eye blink are all sampled from the model!
+
 - The generated video of this sample will be saved to [outputs/monalisa_hubert/monalisa-monalisa.mp4](outputs/monalisa_hubert/monalisa-monalisa.mp4).
 
 - For Pose Controllable Hubert Cases, see [more_hubert_cases_pose_only](md_docs/more_hubert_cases_pose_only.md).
@@ -101,10 +103,11 @@ python ./code/demo.py \
 - For Pose/Face Controllable Hubert Cases, see [more_hubert_cases_more_control](md_docs/more_hubert_cases_more_control.md).
 
 
-| Source Img | Results           | 
+| One Portrait | Result           | 
 |------------|--------------------------|
 |<img src="test_demos/portraits/monalisa.jpg" width="200" ></img> | <img src="assets/monalisa-monalisa.gif" width="200" ></img> | 
 
+[Generated Raw Video (256 * 256)](outputs/monalisa_hubert/monalisa-monalisa.mp4)
 
 ### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
 
