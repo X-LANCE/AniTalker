@@ -1,4 +1,8 @@
 
+<div align="center">
+
+<a href="https://trendshift.io/repositories/10102" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10102" alt="X-LANCE%2FAniTalker | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
 # AniTalker
 
 Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
@@ -14,8 +18,6 @@ Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion
 </div>
 <br>
 
-<div align="center">
-<a href="https://trendshift.io/repositories/10102" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10102" alt="X-LANCE%2FAniTalker | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 
 ![](docs/img/generated_result.png)
