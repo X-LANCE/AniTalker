@@ -227,6 +227,20 @@ Regarding the checkpoints provided by this library, the issues we encountered wh
 }
 ```
 
+## Thanks to all contributors for their efforts
+
+We hope more people can get involved, and we will promptly handle pull requests. Currently, there are still some tasks that need assistance, such as processing the crop pipeline, creating a web UI, and translation work, among others.
+
+[![contributors](https://contrib.rocks/image?repo=X-LANCE/AniTalker)](https://github.com/X-LANCE/AniTalker/graphs/contributors)
+
+
+<div align="center">
+
+  ![counter](https://counter.seku.su/cmoe?name=anitalker&theme=moebooru)
+
+</div>
+
+
 ## Acknowledgments
 
 We would like to express our sincere gratitude to the numerous prior works that have laid the foundation for the development of AniTalker.
