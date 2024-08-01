@@ -264,7 +264,7 @@ We hope more people can get involved, and we will promptly handle pull requests.
 
 [![contributors](https://contrib.rocks/image?repo=X-LANCE/AniTalker)](https://github.com/X-LANCE/AniTalker/graphs/contributors)
 
-**Speical Contributors**
+**Special Contributors**
 
 - [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
 
