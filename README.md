@@ -126,7 +126,7 @@ python ./code/demo.py \
       Portrait:
       <img src="test_demos/portraits/aiface2.png" width="200" ></img>
 
-      You can find running scripts [here](https://github.com/X-LANCE/AniTalker/issues/20)
+      You can find running scripts <a href='https://github.com/X-LANCE/AniTalker/issues/20'>here</a>.
     </td>
     <td width=30% style="border: none">
       Result (256*256) :
