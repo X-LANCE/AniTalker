@@ -122,20 +122,23 @@ python ./code/demo.py \
 <table class="center">
     
 <tr>
+    <th width=30% style="border: none">Portrait</th>
+    <th width=30% style="border: none">Result (256*256)</th>
+    <th width=25% style="border: none">Result (512*512)</th>
+    <th width=5% style="border: none">Scripts</th>
+</tr>
+<tr>
     <td width=30% style="border: none">
-      Portrait:
       <img src="test_demos/portraits/aiface2.png" width="200" ></img>
     </td>
     <td width=30% style="border: none">
-      Result (256*256) :
       <video controls loop src="https://github.com/user-attachments/assets/1b84abb3-c553-4c5b-a969-36843b186dbe" muted="false"></video>
     </td>
     <td width=25% style="border: none">
-       Result (512*512) :
        <video controls loop src="https://github.com/user-attachments/assets/3776d05a-b23e-482c-b466-cfc12feea9eb" muted="false"></video>
     </td>
      <td width=5% style="border: none">
-    <a href="https://github.com/X-LANCE/AniTalker/issues/20"> scripts</a>
+    <a href="https://github.com/X-LANCE/AniTalker/issues/20"> Link</a>
     </td>
 </tr>
 
