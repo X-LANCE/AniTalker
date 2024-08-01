@@ -105,5 +105,5 @@ with gr.Blocks() as demo:
     ], outputs=result_video)
 
 
-demo.launch()
+demo.launch(share=True)
 
