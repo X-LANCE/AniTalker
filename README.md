@@ -32,7 +32,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 pip install -r requirements.txt
 ```
 
-[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) Thanks to [nitinmukesh](https://github.com/nitinmukesh)
+[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
 
 ## Model Zoo
 
@@ -115,6 +115,37 @@ python ./code/demo.py \
 |<img src="test_demos/portraits/monalisa.jpg" width="200" ></img> | <img src="assets/monalisa-monalisa.gif" width="200" ></img> | 
 
 [Generated Raw Video (256 * 256)](outputs/monalisa_hubert/monalisa-monalisa.mp4)
+
+
+### User-submitted Gallery
+
+<table class="center">
+    
+<tr>
+    <th width=30% style="border: none">Portrait</th>
+    <th width=30% style="border: none">Result (256*256)</th>
+    <th width=25% style="border: none">Result (512*512)</th>
+    <th width=5% style="border: none">Scripts</th>
+</tr>
+<tr>
+    <td width=30% style="border: none">
+      <img src="test_demos/portraits/aiface2.png" width="200" ></img>
+    </td>
+    <td width=30% style="border: none">
+      <video controls loop src="https://github.com/user-attachments/assets/1b84abb3-c553-4c5b-a969-36843b186dbe" muted="false"></video>
+    </td>
+    <td width=25% style="border: none">
+       <video controls loop src="https://github.com/user-attachments/assets/3776d05a-b23e-482c-b466-cfc12feea9eb" muted="false"></video>
+    </td>
+     <td width=5% style="border: none">
+    <a href="https://github.com/X-LANCE/AniTalker/issues/20"> Link</a>
+    </td>
+</tr>
+
+You can submmit your demo via issue. 
+
+</table>
+
 
 ### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
 
@@ -233,6 +264,9 @@ We hope more people can get involved, and we will promptly handle pull requests.
 
 [![contributors](https://contrib.rocks/image?repo=X-LANCE/AniTalker)](https://github.com/X-LANCE/AniTalker/graphs/contributors)
 
+**Special Contributors**
+
+- [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
 
 <div align="center">
 
