@@ -32,7 +32,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 pip install -r requirements.txt
 ```
 
-[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) Thanks to [nitinmukesh](https://github.com/nitinmukesh)
+[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
 
 ## Model Zoo
 
@@ -264,6 +264,9 @@ We hope more people can get involved, and we will promptly handle pull requests.
 
 [![contributors](https://contrib.rocks/image?repo=X-LANCE/AniTalker)](https://github.com/X-LANCE/AniTalker/graphs/contributors)
 
+**Speical Contributors**
+
+- [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
 
 <div align="center">
 
