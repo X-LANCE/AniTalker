@@ -6,10 +6,16 @@
 
 Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding
 
-<p align="center">
-  <a href="https://x-lance.github.io/AniTalker/">Demo</a> &nbsp;&nbsp;&nbsp; <a href="https://arxiv.org/abs/2405.03121">Paper</a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/X-LANCE/AniTalker">Code</a>
-</p>
 
+<div align="center">
+  <!-- <a href='LICENSE'><img src='https://img.shields.io/badge/license-MIT-yellow'></a> -->
+  <a href='https://arxiv.org/abs/2405.03121'><img src='https://img.shields.io/badge/arXiv-AniTalker-red'></a>
+  <a href='hhttps://x-lance.github.io/AniTalker/'><img src='https://img.shields.io/badge/Project-AniTalker-green'></a>
+  <!-- <a href='xxx'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'></a> -->
+  <a href="https://colab.research.google.com/github/OpenBB-finance/OpenBBTerminal/blob/develop/examples/googleColab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg"></a>
+  <a href="https://github.com/X-LANCE/AniTalker"><img src="https://img.shields.io/github/stars/X-LANCE/AniTalker"></a>
+</div>
+<br>
 
 An updated version of the paper will be uploaded later
 
