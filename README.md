@@ -21,7 +21,8 @@ An updated version of the paper will be uploaded later
 
 ## Updates
 
-- [2024.07.31] Added hubert feature extraction code and environment
+- [2024.08.01] You can now try AniTalker directly in CodeLab without needing to install the environment. [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) (Thanks to [yuhanxu01](https://github.com/yuhanxu01))
+- [2024.07.31] Introduced Hubert feature extraction code and environment setup
 
 ## Environment Installation
 
@@ -267,6 +268,7 @@ We hope more people can get involved, and we will promptly handle pull requests.
 **Special Contributors**
 
 - [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
+
 
 <div align="center">
 
