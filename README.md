@@ -116,6 +116,28 @@ python ./code/demo.py \
 
 [Generated Raw Video (256 * 256)](outputs/monalisa_hubert/monalisa-monalisa.mp4)
 
+
+### User-submitted Gallery
+
+<table class="center">
+    
+<tr>
+    <td width=30% style="border: none">
+      <img src="test_demos/portraits/aiface2.png" width="200" ></img>
+    </td>
+    <td width=30% style="border: none">
+      <video controls loop src="https://github.com/user-attachments/assets/1b84abb3-c553-4c5b-a969-36843b186dbe" muted="false"></video>
+    </td>
+    <td width=30% style="border: none">
+        <video controls loop src="https://github.com/user-attachments/assets/3776d05a-b23e-482c-b466-cfc12feea9eb" muted="false"></video>
+    </td>
+</tr>
+
+You can find running scripts [here](https://github.com/X-LANCE/AniTalker/issues/20)
+
+</table>
+
+
 ### Main Inference Scripts (MFCC, Faster 🚀) - Not Recommended
 
 [Note] The Hubert model is our default model. For environment convenience, we provide an MFCC version, but we found that the utilization rate of the Hubert model is not high, and people still use MFCC more often. MFCC has poorer results. This goes against our original intention, so we have deprecated this model. We recommend you start testing with the hubert_audio_only model. Thanks.
