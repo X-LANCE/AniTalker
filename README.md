@@ -12,7 +12,7 @@ Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion
   <!-- <a href='LICENSE' target="_blank"><img src='https://img.shields.io/badge/license-MIT-yellow'></a> -->
   <a href='https://arxiv.org/abs/2405.03121' target="_blank"><img src='https://img.shields.io/badge/arXiv-AniTalker-red'></a>
   <a href='https://x-lance.github.io/AniTalker/' target="_blank"><img src='https://img.shields.io/badge/Project-AniTalker-green'></a>
-  <!-- <a href='xxx' target="_blank"><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'></a> -->
+  <a href='https://huggingface.co/spaces/Delik/Anitalker'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'></a>
   <a href="https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg"></a>
   <a href="https://github.com/X-LANCE/AniTalker" target="_blank"><img src="https://img.shields.io/github/stars/X-LANCE/AniTalker"></a>
 </div>
