@@ -284,6 +284,8 @@ We hope more people can get involved, and we will promptly handle pull requests.
 - [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
 
 
+Visit Count:
+
 <div align="center">
 
   ![counter](https://counter.seku.su/cmoe?name=anitalker&theme=moebooru)
