@@ -38,22 +38,33 @@ An updated version of the paper will be uploaded later
 
 ## Windows Installation
 
-Step 1: Create virtual environment using conda
+Step 1: Clone repository
+```
+git clone https://github.com/X-LANCE/AniTalker/
+```
+
+Step 2: Navigate inside cloned repository
+
+```
+cd AniTalker
+```
+
+Step 3: Create virtual environment using conda
 ```
 conda create -n anitalker python==3.9.0
 ```
 
-Step 2: Activate virtual environment
+Step 4: Activate virtual environment
 ```
 conda activate anitalker
 ```
 
-Step 3: Install dependencies
+Step 5: Install dependencies
 ```
 pip install -r requirements_windows.txt
 ```
 
-Step 4: Download checkpoints
+Step 6: Download checkpoints
 ```
 git lfs install
 ```
@@ -61,12 +72,12 @@ git lfs install
 git clone https://huggingface.co/taocode/anitalker_ckpts ckpts
 ```
 
-Step 5: Download additional files for auto-cropping on source image
+Step 7: Download additional files for auto-cropping on source image
 ```
 Read code\data_preprocess\README.txt and download 2 files in same folder
 ```
 
-Step 6: Launch WebUI
+Step 8: Launch WebUI
 ```
 python code/webgui.py
 ```
