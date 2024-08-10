@@ -294,11 +294,8 @@ if __name__ == '__main__':
 
     # macOS Config
     # Check if MPS is available
-    if torch.backends.mps.is_available():
+    if hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
         args.device = torch.device("mps")
         print("MPS backend is available.")
-    # else:
-    #     args.device = torch.device("cpu")
-    #     print("MPS backend is not available. Using CPU instead.")
 
     main(args)
