@@ -14,10 +14,12 @@ conda activate anitalker
 conda install pytorch torchvision torchaudio -c pytorch 
 # install espnet 
 git clone https://github.com/espnet/espnet.git 
-cd espnet pip install -e . 
+cd espnet 
+pip install -e . 
 # install python_speech_features 
 pip install python_speech_features 
-conda install libffi 
+conda install libffi
+pip install -r requirements_macOS.txt 
 ```
 
 # 3. Assets Download
