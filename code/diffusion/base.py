@@ -960,7 +960,14 @@ def _extract_into_tensor(arr, timesteps, broadcast_shape):
                             dimension equal to the length of timesteps.
     :return: a tensor of shape [batch_size, 1, ...] where the shape has K dims.
     """
-    res = th.from_numpy(arr).to(device=timesteps.device)[timesteps].float()
+
+    if th.backends.mps.is_available():
+        arr = arr.astype(np.float32)
+        # Convert the numpy array to a tensor and then move to the device
+        res = th.from_numpy(arr).to(device=timesteps.device)[timesteps]
+    else:
+        res = th.from_numpy(arr).to(device=timesteps.device)[timesteps].float()
+
     while len(res.shape) < len(broadcast_shape):
         res = res[..., None]
     return res.expand(broadcast_shape)

@@ -205,7 +205,7 @@ def main(args):
             padding = np.tile(pose_obj[-1, :], (frame_end - pose_obj.shape[0], 1))
             pose_obj = np.vstack((pose_obj, padding))
             
-        pose_signal = torch.Tensor(pose_obj).unsqueeze(0).to(args.device) / 90 # 90 is for normalization here
+        pose_signal = torch.Tensor(pose_obj).unsqueeze(0).to(args.device)/ 90 # 90 is for normalization here
     else:
         yaw_signal = torch.zeros(1, frame_end, 1).to(args.device) + args.pose_yaw
         pitch_signal = torch.zeros(1, frame_end, 1).to(args.device) + args.pose_pitch
@@ -291,5 +291,14 @@ if __name__ == '__main__':
 
 
     args = parser.parse_args()
+
+    # macOS Config
+    # Check if MPS is available
+    if torch.backends.mps.is_available():
+        args.device = torch.device("mps")
+        print("MPS backend is available.")
+    # else:
+    #     args.device = torch.device("cpu")
+    #     print("MPS backend is not available. Using CPU instead.")
 
     main(args)
