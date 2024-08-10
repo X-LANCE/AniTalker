@@ -1,4 +1,4 @@
-Test passed on Macbook pro M3 Max (128GB + 8TB), Sonoma 14.6.1
+Successfully run on Macbook pro M3 Max (128GB + 8TB), Sonoma 14.6.1
 
 # 1. Project Download
 
