@@ -30,10 +30,10 @@ An updated version of the paper will be uploaded later
 
 ## Updates
 
-- [2024.08.10] Update [MacOS Tutorial](md_docs/run_on_macOS.md)  (by [airwzz999](https://github.com/airwzz999))
-- [2024.08.09] Update [Huggingface Space](https://huggingface.co/spaces/Delik/Anitalker)  (by [Delik](https://github.com/D3lik))
-- [2024.08.01] Update [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) (by [yuhanxu01](https://github.com/yuhanxu01))
-- [2024.07.31] Introduced Hubert feature extraction code and environment setup
+- [2024.08.10] [MacOS Tutorial](md_docs/run_on_macOS.md) updated  (by [airwzz999](https://github.com/airwzz999))
+- [2024.08.09] [Huggingface Space](https://huggingface.co/spaces/Delik/Anitalker) updated  (by [Delik](https://github.com/D3lik))
+- [2024.08.01] [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) updated (by [yuhanxu01](https://github.com/yuhanxu01))
+- [2024.07.31] Added Hubert feature extraction code and environment setup instructions
 
 ## Environment Installation
 
