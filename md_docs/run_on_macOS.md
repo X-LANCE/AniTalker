@@ -31,7 +31,7 @@ pip install -e .
 pip install -r requirements_macOS.txt 
 ```
 
-If you still have trouble installing the environment, you can check [conda env file](md_docs/mac_os_env_list/conda_environment.yml) or [pip env file](md_docs/mac_os_env_list/pip_requirements.txt) for detailed version.
+If you still have trouble installing the environment, you can check [conda env file](../md_docs/mac_os_env_list/conda_environment.yml) or [pip env file](../md_docs/mac_os_env_list/pip_requirements.txt) for detailed version.
 
 # 3. Model Download
 
