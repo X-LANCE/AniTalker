@@ -95,6 +95,10 @@ ckpts/
 
 [Explanation of Parameters for demo.py](md_docs/config.md)
 
+## Run the demo on macOS
+
+[How to run on macOS](md_docs/run_on_macOS.md)
+
 
 ### Main Inference Scripts (Hubert, Better Result 💪) - Recommended
 

@@ -1,11 +1,11 @@
 pytorch-lightning==1.6.5
 torchmetrics==0.5.0
-torch==1.8.0
-torchvision
-scipy==1.5.4
+# torch==1.8.0
+# torchvision
+scipy
 numpy==1.19.5
 tqdm
-espnet==202301
+# espnet==202301
 moviepy
-python_speech_features
+# python_speech_features
 transformers==4.19.2
