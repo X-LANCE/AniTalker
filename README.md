@@ -30,7 +30,9 @@ An updated version of the paper will be uploaded later
 
 ## Updates
 
-- [2024.08.01] You can now try AniTalker directly in CodeLab without needing to install the environment. [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) (Thanks to [yuhanxu01](https://github.com/yuhanxu01))
+- [2024.08.10] Update [MacOS Tutorial](md_docs/run_on_macOS.md)  (by [airwzz999](https://github.com/airwzz999))
+- [2024.08.09] Update [Huggingface Space](https://huggingface.co/spaces/Delik/Anitalker)  (by [Delik](https://github.com/D3lik))
+- [2024.08.01] Update [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) (by [yuhanxu01](https://github.com/yuhanxu01))
 - [2024.07.31] Introduced Hubert feature extraction code and environment setup
 
 ## Environment Installation
@@ -42,7 +44,10 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 pip install -r requirements.txt
 ```
 
-[Windows Installation Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
+[Windows Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
+
+[MacOS Tutorial](md_docs/run_on_macOS.md)  (Contributed by [airwzz999](https://github.com/airwzz999))
+
 
 ## Model Zoo
 
@@ -94,11 +99,6 @@ ckpts/
 ## Run the demo
 
 [Explanation of Parameters for demo.py](md_docs/config.md)
-
-## Run the demo on macOS
-
-[How to run on macOS](md_docs/run_on_macOS.md)
-
 
 ### Main Inference Scripts (Hubert, Better Result 💪) - Recommended
 
