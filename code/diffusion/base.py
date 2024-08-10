@@ -961,7 +961,7 @@ def _extract_into_tensor(arr, timesteps, broadcast_shape):
     :return: a tensor of shape [batch_size, 1, ...] where the shape has K dims.
     """
 
-    if th.backends.mps.is_available():
+    if hasattr(th.backends, 'mps') and th.backends.mps.is_available():
         arr = arr.astype(np.float32)
         # Convert the numpy array to a tensor and then move to the device
         res = th.from_numpy(arr).to(device=timesteps.device)[timesteps]
