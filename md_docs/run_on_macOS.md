@@ -4,6 +4,8 @@ We have tested the environment on following devices:
 - Macbook Pro M3 Max (128GB + 8TB), Sonoma 14.6.1
 - Macbook Pro M1 Pro (16GB + 2TB), Sonoma 14.5
 
+We don't have an Intel-based Mac on hand. If you happen to have one, we welcome you to submit the testing environment and results.
+
 # 1. Project Download
 
 ```
@@ -13,38 +15,33 @@ git clone https://github.com/X-LANCE/AniTalker.git
 # 2. Dependencies Installation
 
 ```
+# install pytorch env for mac os 
 conda create -n anitalker python==3.9.0 -c conda-forge 
 conda activate anitalker 
 conda install pytorch torchvision torchaudio -c pytorch 
-conda install libffi
-conda install -c conda-forge numpy tokenizers
 
 # install espnet 
 git clone https://github.com/espnet/espnet.git 
 cd espnet 
+git checkout b10464
 pip install -e . 
+
+
+conda install -c conda-forge pytorch-lightning=1.6.5 torchmetrics=0.5.0 transformers=4.19.2 moviepy numpy tokenizers scipy tqdm libffi 
+
+pip install python_speech_features
+
 
 # [Optional] You may install rust by the following script if you receive warnings.
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Finally, run: 
-pip install -r requirements_macOS.txt 
 ```
 
 If you still have trouble installing the environment, you can check [conda env file](../md_docs/mac_os_env_list/conda_environment.yml) or [pip env file](../md_docs/mac_os_env_list/pip_requirements.txt) for detailed version.
 
 # 3. Model Download
 
-```
-# Prepare the Model  
-
-cd AniTalker 
-mkdir ckpts 
-Go to https://huggingface.co/taocode/anitalker_ckpts/tree/main  
-then download all six models in path ~/AniTalker/ckpts/ 
-
-```
-![](../assets/models_huggingface.png)
+Please follow the instructions provided in the `README.md` file to download all the required models (including the hubert model). 
 
 # 4. Run
 
