@@ -1,8 +1,0 @@
-python_speech_features
-pytorch-lightning==1.6.5 
-torchmetrics==0.5.0
-numpy
-scipy
-tqdm
-moviepy
-transformers==4.19.2
