@@ -1,49 +1,59 @@
+# AniTalker macOS Setup Guide
 
-We have tested the environment on following devices:
+## Tested Environments
 
-- Macbook Pro M3 Max (128GB + 8TB), Sonoma 14.6.1
-- Macbook Pro M1 Pro (16GB + 2TB), Sonoma 14.5
+We have successfully tested the environment on the following devices:
 
-We don't have an Intel-based Mac on hand. If you happen to have one, we welcome you to submit the testing environment and results.
+- MacBook Pro M3 Max (128GB RAM, 8TB Storage), macOS Sonoma 14.6.1
+- MacBook Pro M1 Pro (16GB RAM, 2TB Storage), macOS Sonoma 14.5
 
-# 1. Project Download
+**Note:** We currently lack access to an Intel-based Mac. If you have one available, we warmly welcome your contributions regarding the testing environment and results.
 
+## 1. Project Download
+
+Clone the repository:
+
+```bash
+git clone https://github.com/X-LANCE/AniTalker.git
 ```
-git clone https://github.com/X-LANCE/AniTalker.git  
-```
 
-# 2. Dependencies Installation
+## 2. Dependencies Installation
 
-```
-# install pytorch env for mac os 
-conda create -n anitalker python==3.9.0 -c conda-forge 
-conda activate anitalker 
-conda install pytorch torchvision torchaudio -c pytorch 
+Follow these steps to set up your environment:
 
-# install espnet 
-git clone https://github.com/espnet/espnet.git 
-cd espnet 
+```bash
+# Create and activate a Conda environment
+conda create -n anitalker python=3.9.0 -c conda-forge
+conda activate anitalker
+
+# Install PyTorch
+conda install pytorch torchvision torchaudio -c pytorch
+
+# Install ESPnet
+git clone https://github.com/espnet/espnet.git
+cd espnet
 git checkout b10464
-pip install -e . 
+pip install -e .
 
-
-conda install -c conda-forge pytorch-lightning=1.6.5 torchmetrics=0.5.0 transformers=4.19.2 moviepy numpy tokenizers scipy tqdm libffi 
-
+# Install additional dependencies
+conda install -c conda-forge pytorch-lightning=1.6.5 torchmetrics=0.5.0 transformers=4.19.2 moviepy numpy tokenizers scipy tqdm libffi
 pip install python_speech_features
 
-
-# [Optional] You may install rust by the following script if you receive warnings.
+# [Optional] Install Rust if you encounter warnings
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 ```
 
-If you still have trouble installing the environment, you can check [conda env file](../md_docs/mac_os_env_list/conda_environment.yml) or [pip env file](../md_docs/mac_os_env_list/pip_requirements.txt) for detailed version.
+If you encounter issues during installation, please refer to our detailed environment files:
+- [Conda environment file](../md_docs/mac_os_env_list/conda_environment.yml)
+- [Pip requirements file](../md_docs/mac_os_env_list/pip_requirements.txt)
 
-# 3. Model Download
+## 3. Model Download
 
-Please follow the instructions provided in the `README.md` file to download all the required models (including the hubert model). 
+Please follow the instructions in the `README.md` file to download all required models, including the HuBERT model.
 
-# 4. Run
+## 4. Running the Demo
+
+Execute the following command to run the demo:
 
 ```
  PYTORCH_ENABLE_MPS_FALLBACK=1 python ./code/demo.py \
@@ -55,9 +65,24 @@ Please follow the instructions provided in the `README.md` file to download all 
     --test_hubert_path 'test_demos/audios_hubert/monalisa.npy' \
     --result_path 'outputs/monalisa_hubert/'
 ```
-- Macbook pro M3 Max (128GB + 8TB), Sonoma 14.6.1:
 
-![](../assets/results_run_on_macOS_m3.png)
+### Results
+
+- MacBook Pro M3 Max (128GB RAM, 8TB Storage), macOS Sonoma 14.6.1:
+  ![Results on M3 Max](../assets/results_run_on_macOS_m3.png)
+
+- MacBook Pro M1 Pro (16GB RAM, 2TB Storage), macOS Sonoma 14.5:
+  ![Results on M1 Pro](../assets/results_run_on_macOS_m1.jpg)
+
+## 5. Notable Modifications
+
+To ensure compatibility with macOS, we've made the following adjustments:
+
+1. Updated dependencies in `requirements.txt`
+2. Utilized MPS (Metal Performance Shaders) instead of CUDA for GPU acceleration
+3. Changed data types from `float64` to `float32` for better performance
+4. Added `PYTORCH_ENABLE_MPS_FALLBACK=1` environment variable to enable fallback to CPU when necessary
+
 
 - Macbook pro M1 Pro (16GB + 2TB), Sonoma 14.5:
 
