@@ -9,3 +9,5 @@ espnet==202301
 moviepy==1.0.3
 python_speech_features
 transformers==4.19.2
+gradio
+dlib==19.24.5

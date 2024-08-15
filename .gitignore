@@ -13,3 +13,4 @@ checkpoints
 tmp
 train_stage2.py
 espnet
+*.dat
