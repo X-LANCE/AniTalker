@@ -34,7 +34,54 @@ An updated version of the paper will be uploaded later
 - [2024.08.09] [Huggingface Space](https://huggingface.co/spaces/Delik/Anitalker) updated  (by [Delik](https://github.com/D3lik))
 - [2024.08.02] [Web UI](code/webgui.py) updated (by [yuhanxu01](https://github.com/yuhanxu01))
 - [2024.08.01] [Codelab](https://colab.research.google.com/github/yuhanxu01/AniTalker/blob/main/AniTalker_demo.ipynb) updated (by [yuhanxu01](https://github.com/yuhanxu01))
+- [2024.08.01] [Windows Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
 - [2024.07.31] Added Hubert feature extraction code and environment setup instructions
+
+## Windows Installation
+
+Step 1: Clone repository
+```
+git clone https://github.com/X-LANCE/AniTalker/
+```
+
+Step 2: Navigate inside cloned repository
+
+```
+cd AniTalker
+```
+
+Step 3: Create virtual environment using conda
+```
+conda create -n anitalker python==3.9.0
+```
+
+Step 4: Activate virtual environment
+```
+conda activate anitalker
+```
+
+Step 5: Install dependencies
+```
+pip install -r requirements_windows.txt
+```
+
+Step 6: Download checkpoints
+```
+git lfs install
+```
+```
+git clone https://huggingface.co/taocode/anitalker_ckpts ckpts
+```
+
+Step 7: Download additional files for auto-cropping on source image
+```
+Read code\data_preprocess\README.txt and download 2 files in same folder
+```
+
+Step 8: Launch WebUI
+```
+python code/webgui.py
+```
 
 ## Environment Installation
 
@@ -45,7 +92,6 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 pip install -r requirements.txt
 ```
 
-[Windows Tutorial](https://www.youtube.com/watch?v=x1ZP3e830DY) (Contributed by [nitinmukesh](https://github.com/nitinmukesh))
 
 [MacOS Tutorial](md_docs/run_on_macOS.md)  (Contributed by [airwzz999](https://github.com/airwzz999))
 
@@ -283,6 +329,7 @@ We hope more people can get involved, and we will promptly handle pull requests.
 
 - [nitinmukesh](https://github.com/nitinmukesh) submitted the Windows installation tutorial. His [Youtube channel](https://www.youtube.com/@StableAIHub) has many amazing digital human tutorials. Welcome to subscribe to his channel!
 
+- https://github.com/tanshuai0219/EDTalk for image auto-crop code
 
 Visit Count:
 

@@ -281,7 +281,7 @@ def main(args):
         return predicted_video_256_path, predicted_video_256_path
 
 def generate_video(uploaded_img, uploaded_audio, infer_type, 
-        pose_yaw, pose_pitch, pose_roll, face_location, face_scale, step_T, device, face_sr, seed):
+        pose_yaw, pose_pitch, pose_roll, face_location, face_scale, step_T, device, face_sr, seed, face_crop):
     if uploaded_img is None or uploaded_audio is None:
         return None, gr.Markdown("Error: Input image or audio file is empty. Please check and upload both files.")
     
@@ -293,13 +293,16 @@ def generate_video(uploaded_img, uploaded_audio, infer_type,
         "hubert_full_control": "./ckpts/stage2_full_control_hubert.ckpt",
     }
 
-    # if face_crop:
-    #     uploaded_img_path = Path(uploaded_img)
-    #     cropped_img_path = uploaded_img_path.with_name(uploaded_img_path.stem + "_crop" + uploaded_img_path.suffix)
-    #     crop_image(uploaded_img, cropped_img_path)
-    #     uploaded_img = str(cropped_img_path)
-
-    # import pdb;pdb.set_trace()
+    if face_crop:
+        from data_preprocess.crop_image2 import crop_image
+        print("==> croping source_img")
+        crop_path = os.path.join(os.path.dirname(uploaded_img), 'crop_'+os.path.basename(uploaded_img))
+        try:
+            crop_image(uploaded_img, crop_path)
+            if os.path.exists(crop_path):
+                uploaded_img = crop_path
+        except:
+            print('==> crop image failed, use original source for animate')
 
     stage2_checkpoint_path = model_mapping.get(infer_type, "default_checkpoint.ckpt")
     try:
@@ -360,6 +363,7 @@ with gr.Blocks() as demo:
     with gr.Row():
         with gr.Column():
             uploaded_img = gr.Image(type="filepath", label="Reference Image")
+            face_crop = gr.Checkbox(label="Face Crop (dlib)", value=False)
             uploaded_audio = gr.Audio(type="filepath", label="Input Audio")
         with gr.Column():
             output_video_256 = gr.Video(label="Generated Video (256)")
@@ -377,8 +381,6 @@ with gr.Blocks() as demo:
             value='hubert_audio_only'
         )
         face_sr = gr.Checkbox(label="Enable Face Super-Resolution (512*512)", value=False)
-        # face_crop = gr.Checkbox(label="Face Crop (Dlib)", value=False) 
-        # face_crop = False # TODO
         seed = gr.Number(label="Seed", value=default_values["seed"])
         pose_yaw = gr.Slider(label="pose_yaw", minimum=-1, maximum=1, value=default_values["pose_yaw"])
         pose_pitch = gr.Slider(label="pose_pitch", minimum=-1, maximum=1, value=default_values["pose_pitch"])
@@ -393,7 +395,8 @@ with gr.Blocks() as demo:
         generate_video,
         inputs=[
             uploaded_img, uploaded_audio, infer_type, 
-            pose_yaw, pose_pitch, pose_roll, face_location, face_scale, step_T, device, face_sr, seed
+            pose_yaw, pose_pitch, pose_roll, face_location, face_scale, step_T, device, face_sr, seed,
+            face_crop
         ],
         outputs=[output_video_256, output_video_512, output_message]
     )
