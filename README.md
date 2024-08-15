@@ -30,7 +30,7 @@ An updated version of the paper will be uploaded later
 
 ## Updates
 
-- [2024.08.10] [Windows Tutorial](md_docs/run_on_windows.md) updated  (by [newgenai79](https://github.com/newgenai79)
+- [2024.08.10] [Windows Tutorial](md_docs/run_on_windows.md) updated  (by [newgenai79](https://github.com/newgenai79))
 - [2024.08.10] [MacOS Tutorial](md_docs/run_on_macOS.md) updated  (by [airwzz999](https://github.com/airwzz999))
 - [2024.08.09] [Huggingface Space](https://huggingface.co/spaces/Delik/Anitalker) updated  (by [Delik](https://github.com/D3lik))
 - [2024.08.02] [Web UI](code/webgui.py) updated (by [yuhanxu01](https://github.com/yuhanxu01))
